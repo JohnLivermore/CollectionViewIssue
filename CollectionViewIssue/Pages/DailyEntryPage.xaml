@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:l="clr-namespace:CollectionViewIssue.Pages"
+             x:Class="CollectionViewIssue.Pages.DailyEntryPage">
+    <ContentPage.Content>
+        <Grid Margin="10,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <l:TanksView Grid.Row="0"
+                         BindingContext="{Binding TanksViewModel}" />
+            <l:MetersView Grid.Row="0"
+                          BindingContext="{Binding MetersViewModel}" />
+
+            <Grid Grid.Row="1" ColumnDefinitions="*,*">
+                <Button Grid.Column="0"
+                        Text="Tanks"
+                        Command="{Binding ButtonClick}"
+                        CommandParameter="Tanks" />
+                <Button Grid.Column="1"
+                        Text="Meters"
+                        Command="{Binding ButtonClick}"
+                        CommandParameter="Meters" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
